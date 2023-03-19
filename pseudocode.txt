@@ -1,0 +1,21 @@
+every person becomes an object with a name property with a string value and a BeenChosen property with a boolean value
+Been Chosen is set to false as default
+make array of person object names called givers
+
+create function for making an array of potential recievers, call it "createStillLeft"
+	declare array for potential receivers, call it "stillLeft"
+	iterate over every person
+		if person has "beenChosen" property set to false, add to "stillLeft" array
+	return the StillLeft array
+
+	
+create function for assigning a person as a giver to a person in the "stillLeft" array, call it "assignReceivers"
+	declare array called "receivers"
+	iterate over array of people
+		declare variable for person, call "giver"
+		call the createStillLeft function and assign it to declared variable called stillLeft
+		do {create a random number between 0 and size of StillLeft array minus 1 and assign it to declared variable called "index" and then declare variable called "receiver" that will be the person at that index of "stillLeft"}
+		while ("receiver" === "giver")
+		assign receiver.beenChosen to true;
+		assign value of "reciever" to "receivers" array
+	return "receivers" array

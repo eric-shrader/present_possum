@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>present possum</title>
+        <style>
+            body {
+                background-color: #165b33;
+            }
+            button {
+                background-color: #f8b229;
+            }
+            #app {
+                width: 700px;
+                margin: auto;
+                color: black;
+                margin: auto;
+            }
+            h1 {
+                font-size: 5em;
+            }
+            table {
+                color: black;
+                background-color: #af2a19;
+                border: 3px solid black;
+                margin: 10px;
+                font-size: 4em;
+                border-collapse: collapse;
+            }
+            th {
+                background-color: #af2a19;
+                border: 3px solid black;
+                padding: 5px;
+            }
+            tr:nth-of-type(2n+1) {
+                background-color: #ea4630;
+            }
+            tr:nth-of-type(2n) {
+                background-color: #bb2528;
+            }
+            td {
+                border: 3px solid black;
+                padding: 5px;
+            }
+            button {
+                font-size: 2em;
+            }
+            input {
+                font-size: 2em;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+        <h1>Present Possum</h1>
+        <input type="text" id="addParticipant">
+        <button id="addButton">add</button>
+        <button id="randomButton">Randomize</button>
+        <table id="presents">
+            <tr>
+                <th>givers</th>
+                <th>receivers</th>
+            </tr>
+        </table>
+    </div>
+        <script src="present_possum.js"></script>
+    </body>
+</html>
