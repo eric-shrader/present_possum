@@ -7,23 +7,49 @@
             body {
                 background-color: #165b33;
             }
-            button {
-                background-color: #f8b229;
-            }
             #app {
-                width: 700px;
-                margin: auto;
+                background-color: #43A65F;
+                border: 3px black dashed;
+                min-height: 100vh;
+                width: 1000px;
+			    margin: auto;
                 color: black;
                 margin: auto;
             }
             h1 {
+                margin: auto;
+                margin-top: 0px;
+                margin-bottom: 10px;
+                text-align: center;
+                padding: 30px;
+                background-color: #f8b229;
                 font-size: 5em;
+                border-bottom: 2px black solid;
+            }
+            #inputs {
+                display: flex;
+                justify-content: center;
+                width: 700px;
+                margin: auto;
+				margin-bottom: 10px;
+            }
+            button {
+                margin: 0px 2px;
+                background-color: #f8b229;
+                font-size: 2em;
+            }
+            input {
+                margin: 0px 2px;
+                background-color: white;
+                font-size: 2em;
+                width: 300px;
             }
             table {
                 color: black;
+				text-align: center;
                 background-color: #af2a19;
                 border: 3px solid black;
-                margin: 10px;
+                margin: auto;
                 font-size: 4em;
                 border-collapse: collapse;
             }
@@ -40,23 +66,18 @@
             }
             td {
                 border: 3px solid black;
-                padding: 5px;
             }
-            button {
-                font-size: 2em;
-            }
-            input {
-                font-size: 2em;
-                width: 300px;
-            }
+
         </style>
     </head>
     <body>
         <div id="app">
         <h1>Present Possum</h1>
-        <input type="text" id="addParticipant">
-        <button id="addButton">add</button>
-        <button id="randomButton">Randomize</button>
+        <div id="inputs">
+                <input type="text" id="addParticipant" placeholder="type participant">
+            <button id="addButton">add</button>
+            <button id="randomButton">Randomize</button>
+        </div>
         <table id="presents">
             <tr>
                 <th>givers</th>

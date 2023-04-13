@@ -11,7 +11,7 @@ function createStillLeft(givers) {
 	var stillLeft = new Array();
 	for (var i = 0; i < givers.length; i++) {
 		var receiver = givers[i];
-		if (receiver.beenChosen === false) {
+		if (!receiver.beenChosen) {
 			stillLeft.push(receiver);
 		}
 	}
@@ -24,9 +24,16 @@ function assignReceivers(givers) {
 	for (var i = 0; i < givers.length; i++) {
 		var giver = givers[i];
 		var stillLeft = createStillLeft(givers);
+		if (i === (givers.length - 1) && (giver === stillLeft[0])) {
+			for (var j = 0; j < givers.length; j++) {
+				givers[j].beenChosen = false;
+			}
+			receivers = assignReceivers(givers);
+			break;
+		}
 		do {
 			var index = Math.floor(Math.random()*stillLeft.length);
-			var receiver = stillLeft[index]
+			var receiver = stillLeft[index];
 		} while (receiver === giver);
 		receiver.beenChosen = true;
 		receivers.push(receiver);
@@ -47,6 +54,7 @@ function init() {
 	//assignTableAsGiver();
 	var randomButton = document.getElementById("randomButton");
 	randomButton.onclick = randomize;
+	randomButton.onmouseover = pointer(randomButton);
 	
 	// function to randomize everything and let us reshuffle
 		function randomize() {
@@ -75,6 +83,10 @@ function init() {
 
 	var addButton = document.getElementById("addButton");
 	addButton.onclick = addParticipant;
+	addButton.onmouseover = pointer(addButton);
+	function pointer(button) {
+		style = button.setAttribute("style", "cursor: pointer;");
+	}
 	var text = document.getElementById("addParticipant");
 	text.onkeydown = function(event) {
 		if (event.key == "Enter") {
